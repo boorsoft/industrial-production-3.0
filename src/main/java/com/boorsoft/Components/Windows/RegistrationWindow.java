@@ -48,6 +48,13 @@ public class RegistrationWindow {
 
     @FXML
     void initialize() {
+        String registrLoginInput = registrLoginField.getText();
+        String registrPassInput = registrPassField.getText();
+        String registrPassRepeatInput = registrPassRepeatField.getText();
+
+        confirmBtn.setOnAction(event -> {
+            
+        });
 
         backBtn.setOnAction(event -> {
             backBtn.getScene().getWindow().hide();
