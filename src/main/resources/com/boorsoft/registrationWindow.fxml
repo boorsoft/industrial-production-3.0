@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #8FC0A9; -fx-font-family: Roboto;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boorsoft.Components.Windows.RegistrationWindow">
+    <children>
+        <AnchorPane layoutX="289.0" layoutY="58.0" prefHeight="485.0" prefWidth="423.0" style="-fx-background-color: #696d7d; -fx-background-radius: 20px;">
+            <children>
+                <PasswordField fx:id="registrPassField" layoutX="94.0" layoutY="262.0" prefHeight="29.0" prefWidth="236.0" promptText="Passwort eingeben" style="-fx-background-color: #696d7d; -fx-border-width: 1.5; -fx-border-color: #C8D5B9; -fx-border-radius: 20px; -fx-text-fill: #C8D5B9;" />
+                <TextField fx:id="registrLoginField" layoutX="94.0" layoutY="207.0" prefHeight="29.0" prefWidth="236.0" promptText="Login eingeben" style="-fx-background-color: #696d7d; -fx-border-width: 1.5; -fx-border-color: #C8D5B9; -fx-border-radius: 20px; -fx-text-fill: #C8D5B9;" />
+                <Label layoutX="90.0" layoutY="91.0" text="R E G I S T R I E R U N G" textAlignment="JUSTIFY">
+                    <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" proportional="false" radius="0.5">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </RadialGradient>
+                    </textFill>
+                    <font>
+                        <Font name="Roboto Bold" size="23.0" />
+                    </font>
+                </Label>
+                <JFXRadioButton fx:id="selasmanRegistrRadioBtn" layoutX="83.0" layoutY="159.0" text="Verkäufer" textFill="#c8d5b9">
+                    <selectedColor>
+                        <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                    </selectedColor>
+                    <unSelectedColor>
+                        <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                    </unSelectedColor>
+                    <font>
+                        <Font name="Roboto" size="14.0" />
+                    </font>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="toogleGroup" />
+                    </toggleGroup>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="providerRegistrRadioBtn" layoutX="180.0" layoutY="159.0" text="Lieferant" textFill="#c8d5b9" toggleGroup="$toogleGroup">
+                    <selectedColor>
+                        <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                    </selectedColor>
+                    <unSelectedColor>
+                        <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                    </unSelectedColor>
+                    <font>
+                        <Font name="Roboto" size="14.0" />
+                    </font>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="deliverRegistrRadioBtn" layoutX="276.0" layoutY="159.0" text="Kurier" textFill="#c8d5b9" toggleGroup="$toogleGroup">
+                    <selectedColor>
+                        <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                    </selectedColor>
+                    <unSelectedColor>
+                        <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                    </unSelectedColor>
+                    <font>
+                        <Font name="Roboto" size="14.0" />
+                    </font>
+                </JFXRadioButton>
+                <Button fx:id="confirmBtn" layoutX="94.0" layoutY="370.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="236.0" style="-fx-background-color: #8FC0A9; -fx-background-radius: 20px;" text="Bestätigen" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto" size="13.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <PasswordField fx:id="registrPassRepeatField" layoutX="94.0" layoutY="305.0" prefHeight="29.0" prefWidth="236.0" promptText="Passwort bestätigen" style="-fx-background-color: #696d7d; -fx-border-width: 1.5; -fx-border-color: #C8D5B9; -fx-border-radius: 20px; -fx-text-fill: #C8D5B9;" />
+                <Button fx:id="backBtn" layoutX="94.0" layoutY="406.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="236.0" style="-fx-background-color: #8FC0A9; -fx-background-radius: 20px;" text="Ausgang" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto" size="13.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX" height="23.93" offsetX="4.0" offsetY="5.0" radius="17.939999999999998" width="49.83">
+                    <color>
+                        <Color red="0.15789473056793213" green="0.15497076511383057" blue="0.15497076511383057" opacity="0.6000000238418579" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </AnchorPane>
+    </children>
+</AnchorPane>
