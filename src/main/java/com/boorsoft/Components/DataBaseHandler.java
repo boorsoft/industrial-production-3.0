@@ -17,6 +17,14 @@ public class DataBaseHandler extends Config {
 
         return dbConnection;
     }
+    
+    public ResultSet toDBWorkersData(WorkersModel workers) throws ClassNotFoundException, SQLException{
+        ResultSet resultSet= null;
+        String insert = "INSERT INTO workers(login, password, accType) VALUES (?, ?, ?)";
+
+        PreparedStatement preparedStatement = getDbConnection().prepareStatement(insert);
+        return resultSet;
+    }
 
     public ResultSet fromDBWorkersData(WorkersModel workers) throws SQLException, ClassNotFoundException {
         ResultSet resultSet = null;

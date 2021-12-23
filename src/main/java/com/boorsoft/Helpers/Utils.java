@@ -22,7 +22,7 @@ public class Utils {
         Parent parent = load.getRoot();
         Stage stage = new Stage();
         stage.setScene(new Scene(parent));
-        stage.show();
+        stage.showAndWait();
     }
 
 }
