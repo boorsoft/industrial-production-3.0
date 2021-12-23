@@ -73,7 +73,7 @@ public class LoginWindow {
 
         registrBtn.setOnAction(event -> {
             registrBtn.getScene().getWindow().hide();
-            Utils.load("sample.fxml", LoginWindow.class);
+            Utils.load("/com/boorsoft/registrationWindow.fxml", LoginWindow.class);
         });
     }
 
