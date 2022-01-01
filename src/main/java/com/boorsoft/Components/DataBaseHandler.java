@@ -18,18 +18,22 @@ public class DataBaseHandler extends Config {
         return dbConnection;
     }
     
-    public ResultSet toDBWorkersData(WorkersModel workers) throws ClassNotFoundException, SQLException{
-        ResultSet resultSet= null;
-        String insert = "INSERT INTO workers(login, password, accType) VALUES (?, ?, ?)";
+    public void toDBWorkersData(String login, String password, String accType) throws ClassNotFoundException, SQLException{
+        String insert = "INSERT INTO " + Constants.WORKERS_TABLE + "(" + Constants.WORKERS_LOGIN + "," + Constants.WORKERS_PASS + "," + Constants.WORKERS_ACCTYPE + ")" + "VALUES(?,?,?)";
 
         PreparedStatement preparedStatement = getDbConnection().prepareStatement(insert);
-        return resultSet;
+        preparedStatement.setString(1, login);
+        preparedStatement.setString(2, password);
+        preparedStatement.setString(3, accType);
+
+        preparedStatement.executeUpdate();
     }
 
     public ResultSet fromDBWorkersData(WorkersModel workers) throws SQLException, ClassNotFoundException {
         ResultSet resultSet = null;
+        
         String select = "SELECT * FROM " + Constants.WORKERS_TABLE + " WHERE " + Constants.WORKERS_LOGIN + "=? AND "
-                + Constants.WORKERS_PASS + "=? AND " + Constants.WORKERS_ACCTYPE + "=?";
+        + Constants.WORKERS_PASS + "=? AND " + Constants.WORKERS_ACCTYPE + "=?";
 
         PreparedStatement preparedStatement = getDbConnection().prepareStatement(select);
         preparedStatement.setString(1, workers.getLogin());
@@ -37,7 +41,7 @@ public class DataBaseHandler extends Config {
         preparedStatement.setString(3, workers.getAccType());
 
         resultSet = preparedStatement.executeQuery();
-
+        
         return resultSet;
     }
 
