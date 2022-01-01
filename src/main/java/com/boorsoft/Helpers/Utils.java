@@ -9,20 +9,25 @@ import java.io.IOException;
 
 public class Utils {
 
-    public static void load(String url, Class window) {
-        FXMLLoader load = new FXMLLoader();
-        load.setLocation(window.getResource(url));
+    public static void load(String url, Class<?> window) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(window.getResource(url));
 
         try {
-            load.load();
+            loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        Parent parent = load.getRoot();
+        Parent parent = loader.getRoot();
+
         Stage stage = new Stage();
-        stage.setScene(new Scene(parent));
+        stage.setScene(
+                new Scene(parent));
+        stage.setMinHeight(Constants.MIN_WINDOW_HEIGHT);
+        stage.setMinWidth(Constants.MIN_WINDOW_WIDTH);
         stage.show();
+
     }
 
 }
