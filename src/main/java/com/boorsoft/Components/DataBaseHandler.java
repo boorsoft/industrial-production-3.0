@@ -31,8 +31,9 @@ public class DataBaseHandler extends Config {
 
     public ResultSet fromDBWorkersData(WorkersModel workers) throws SQLException, ClassNotFoundException {
         ResultSet resultSet = null;
+        
         String select = "SELECT * FROM " + Constants.WORKERS_TABLE + " WHERE " + Constants.WORKERS_LOGIN + "=? AND "
-                + Constants.WORKERS_PASS + "=? AND " + Constants.WORKERS_ACCTYPE + "=?";
+        + Constants.WORKERS_PASS + "=? AND " + Constants.WORKERS_ACCTYPE + "=?";
 
         PreparedStatement preparedStatement = getDbConnection().prepareStatement(select);
         preparedStatement.setString(1, workers.getLogin());
@@ -40,7 +41,7 @@ public class DataBaseHandler extends Config {
         preparedStatement.setString(3, workers.getAccType());
 
         resultSet = preparedStatement.executeQuery();
-
+        
         return resultSet;
     }
 

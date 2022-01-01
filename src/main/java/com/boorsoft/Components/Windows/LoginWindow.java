@@ -53,10 +53,9 @@ public class LoginWindow {
         enterBtn.setOnAction(event -> {
             String loginInput = loginField.getText().trim();
             String passInput = passField.getText().trim();
-
             if (!loginInput.equals("") && !passInput.equals("")) {
-                checkAccType();
                 try {
+                    checkAccType();
                     checkAuth(loginInput, passInput);
                 } catch (SQLException | ClassNotFoundException e) {
                     e.printStackTrace();

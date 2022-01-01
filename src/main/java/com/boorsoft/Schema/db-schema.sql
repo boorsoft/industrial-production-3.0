@@ -13,3 +13,5 @@ CREATE TABLE workers (
   pass varchar(45) DEFAULT NULL,
   accType varchar(45) DEFAULT NULL
 );
+
+SELECT * FROM workers;
