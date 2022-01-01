@@ -40,13 +40,13 @@ public class LoginWindow {
     private Button registrBtn;
 
     @FXML
-    private JFXRadioButton selasmanRadioBtn;
+    private JFXRadioButton salesmanRadioBtn;
 
     ToggleGroup toggleGroup = new ToggleGroup();
 
     @FXML
     public void initialize() {
-        selasmanRadioBtn.setToggleGroup(toggleGroup);
+        salesmanRadioBtn.setToggleGroup(toggleGroup);
         providerRadioBtn.setToggleGroup(toggleGroup);
         deliverRadioBtn.setToggleGroup(toggleGroup);
 
@@ -62,8 +62,8 @@ public class LoginWindow {
                 }
             } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Achtung alarm!");
-                alert.setHeaderText("Warnung Status:");
+                alert.setTitle("Warnung");
+                alert.setHeaderText("Warnstatus:");
                 alert.setContentText("Der Login oder das Passwort ist leer!");
 
                 alert.showAndWait();
@@ -101,9 +101,9 @@ public class LoginWindow {
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Warning alert");
-            alert.setHeaderText("Warning Status:");
-            alert.setContentText("The login or password is incorrect!");
+            alert.setTitle("Warnung");
+            alert.setHeaderText("Warnstatus:");
+            alert.setContentText("Das Passwort oder der Login ist falsch!");
 
             alert.showAndWait();
         }
@@ -112,7 +112,7 @@ public class LoginWindow {
     // проверяет какой тип аккаунта выбрал пользователь
     private String checkAccType() {
 
-        if (toggleGroup.getSelectedToggle().equals(selasmanRadioBtn)) {
+        if (toggleGroup.getSelectedToggle().equals(salesmanRadioBtn)) {
             return Constants.Type = "salesman";
         } else if (toggleGroup.getSelectedToggle().equals(providerRadioBtn)) {
             return Constants.Type = "provider";

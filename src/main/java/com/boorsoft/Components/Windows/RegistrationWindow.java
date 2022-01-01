@@ -49,15 +49,13 @@ public class RegistrationWindow {
     private PasswordField registrPassRepeatField;
 
     @FXML
-    private JFXRadioButton selasmanRegistrRadioBtn;
+    private JFXRadioButton salesmanRegistrRadioBtn;
 
     @FXML
     private ToggleGroup toogleGroup;
 
-
     @FXML
     void initialize() {
-        
 
         DataBaseHandler dbHandler = new DataBaseHandler();
 
@@ -66,10 +64,10 @@ public class RegistrationWindow {
             String registrPassInput = registrPassField.getText().trim();
             String registrPassRepeatInput = registrPassRepeatField.getText().trim();
             if (!registrLoginInput.equals("") && !registrPassInput.equals("") && !registrPassRepeatInput.equals("")) {
-                if (registrPassInput.equals(registrPassRepeatInput)){
+                if (registrPassInput.equals(registrPassRepeatInput)) {
                     try {
-                        if (checkIfExists(registrLoginInput) <= 1){
-                            if (toogleGroup.getSelectedToggle().equals(selasmanRegistrRadioBtn)) {
+                        if (checkIfExists(registrLoginInput) <= 1) {
+                            if (toogleGroup.getSelectedToggle().equals(salesmanRegistrRadioBtn)) {
                                 Constants.Type = "salesman";
                             } else if (toogleGroup.getSelectedToggle().equals(providerRegistrRadioBtn)) {
                                 Constants.Type = "provider";
@@ -77,40 +75,38 @@ public class RegistrationWindow {
                                 Constants.Type = "deliver";
                             }
                             dbHandler.toDBWorkersData(registrLoginInput, registrPassInput, Constants.Type);
-                            registrLoginField.setText("Регистрация прошла успешно");
+                            registrLoginField.setText("Erfolgreich angemeldet");
                             registrPassField.setText("");
                             registrPassRepeatField.setText("");
-                        }else {
+                        } else {
                             Alert alert = new Alert(Alert.AlertType.WARNING);
                             alert.setTitle("Warning alert");
                             alert.setHeaderText("Warning Status:");
-                            alert.setContentText("Пользователь уже существует!");
-            
+                            alert.setContentText("Benutzere existiert bereits");
+
                             alert.showAndWait();
                         }
-                    
-                    }catch (ClassNotFoundException | SQLException e) {
-                    e.printStackTrace();
-                }   
-            }else {
+
+                    } catch (ClassNotFoundException | SQLException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Warnung");
+                    alert.setHeaderText("Warnstatus:");
+                    alert.setContentText("Passwörter stimmen nicht");
+
+                    alert.showAndWait();
+                }
+            } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Warning alert");
-                alert.setHeaderText("Warning Status:");
-                alert.setContentText("Пароли не совпадают!");
+                alert.setTitle("Warnung");
+                alert.setHeaderText("Warnstatus:");
+                alert.setContentText("Felder dürfen nicht leer sein");
 
                 alert.showAndWait();
             }
-        }else {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Warning alert");
-            alert.setHeaderText("Warning Status:");
-            alert.setContentText("Поля не должны быть пустыми!");
-
-            alert.showAndWait();
-        }
         });
-
-        
 
         backBtn.setOnAction(event -> {
             backBtn.getScene().getWindow().hide();
@@ -118,7 +114,7 @@ public class RegistrationWindow {
         });
     }
 
-    private int checkIfExists(String login) throws SQLException, ClassNotFoundException{ 
+    private int checkIfExists(String login) throws SQLException, ClassNotFoundException {
         DataBaseHandler dbHandler = new DataBaseHandler();
         WorkersModel workers = new WorkersModel();
         workers.setLogin(login);
@@ -130,8 +126,9 @@ public class RegistrationWindow {
             count++;
         }
         if (count >= 1) {
-            if (workers.getLogin().equals(login))  i++;
-        } 
+            if (workers.getLogin().equals(login))
+                i++;
+        }
         return i;
     }
 }
