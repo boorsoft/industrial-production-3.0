@@ -20,7 +20,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #8FC0A9; -fx-font-family: Roboto;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #8FC0A9; -fx-font-family: Roboto;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boorsoft.Components.Windows.RegistrationWindow">
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -70,7 +70,7 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="42.0" prefWidth="300.0" spacing="20.0">
                                  <children>
-                                    <JFXRadioButton fx:id="selasmanRegistrRadioBtn" text="Verkäufer" textFill="#c8d5b9">
+                                    <JFXRadioButton fx:id="salesmanRegistrRadioBtn" text="Verkäufer" textFill="#c8d5b9">
                                        <selectedColor>
                                           <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
                                        </selectedColor>

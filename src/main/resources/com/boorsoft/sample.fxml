@@ -70,7 +70,7 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="42.0" prefWidth="300.0" spacing="20.0">
                                  <children>
-                                    <JFXRadioButton fx:id="selasmanRadioBtn" text="Verkäufer" textFill="#c8d5b9">
+                                    <JFXRadioButton fx:id="salesmanRadioBtn" text="Verkäufer" textFill="#c8d5b9">
                                        <selectedColor>
                                           <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
                                        </selectedColor>
