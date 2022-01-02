@@ -1,19 +1,29 @@
 package com.boorsoft.Components.Windows;
 
 import com.jfoenix.controls.JFXRadioButton;
+
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+
 import com.boorsoft.Components.DataBaseHandler;
 import com.boorsoft.Helpers.Constants;
 import com.boorsoft.Helpers.Utils;
 import com.boorsoft.Models.WorkersModel;
 
 public class LoginWindow {
+
+    @FXML
+    private AnchorPane loginPane;
+
+    @FXML
+    private Button quitButton;
 
     @FXML
     private ResourceBundle resources;
@@ -71,8 +81,14 @@ public class LoginWindow {
         });
 
         registrBtn.setOnAction(event -> {
-            registrBtn.getScene().getWindow().hide();
-            Utils.load("/com/boorsoft/registrationWindow.fxml", LoginWindow.class);
+
+            AnchorPane registrationPane = Utils.load("/com/boorsoft/registrationWindow.fxml", LoginWindow.class);
+            loginPane.getChildren().setAll(registrationPane);
+
+        });
+
+        quitButton.setOnAction(event -> {
+            Platform.exit();
         });
     }
 

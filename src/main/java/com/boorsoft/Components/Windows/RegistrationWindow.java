@@ -110,7 +110,7 @@ public class RegistrationWindow {
 
         backBtn.setOnAction(event -> {
             backBtn.getScene().getWindow().hide();
-            Utils.load("/com/boorsoft/sample.fxml", RegistrationWindow.class);
+            Utils.load("/com/boorsoft/loginWindow.fxml", RegistrationWindow.class);
         });
     }
 

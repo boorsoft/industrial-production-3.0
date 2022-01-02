@@ -77,7 +77,7 @@ public class SalesmanMenu {
         // Выходит в главное меню
         exitBtn.setOnAction(event -> {
             exitBtn.getScene().getWindow().hide();
-            Utils.load("/com/boorsoft/sample.fxml", SalesmanMenu.class);
+            Utils.load("/com/boorsoft/loginWindow.fxml", SalesmanMenu.class);
         });
     }
 
