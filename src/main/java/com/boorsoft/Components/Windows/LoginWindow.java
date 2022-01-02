@@ -9,8 +9,10 @@ import java.util.ResourceBundle;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import com.boorsoft.Components.DataBaseHandler;
 import com.boorsoft.Helpers.Constants;
@@ -24,6 +26,12 @@ public class LoginWindow {
 
     @FXML
     private Button quitButton;
+
+    @FXML
+    private Button minimizeButton;
+
+    @FXML
+    private Button maximizeButton;
 
     @FXML
     private ResourceBundle resources;
@@ -85,6 +93,20 @@ public class LoginWindow {
             AnchorPane registrationPane = Utils.load("/com/boorsoft/registrationWindow.fxml", LoginWindow.class);
             loginPane.getChildren().setAll(registrationPane);
 
+        });
+
+        maximizeButton.setOnAction(event -> {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            if (stage.isFullScreen())
+                stage.setFullScreen(false);
+            else
+                stage.setFullScreen(true);
+        });
+
+        minimizeButton.setOnAction(event -> {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setIconified(true);
         });
 
         quitButton.setOnAction(event -> {

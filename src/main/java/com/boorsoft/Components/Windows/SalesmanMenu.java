@@ -6,16 +6,30 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.scene.Node;
 
 import com.boorsoft.Components.DataBaseHandler;
 import com.boorsoft.Helpers.Utils;
 import com.boorsoft.Models.GoodsModel;
 
 public class SalesmanMenu {
+
+    @FXML
+    private Button quitButton;
+
+    @FXML
+    private Button minimizeButton;
+
+    @FXML
+    private Button maximizeButton;
 
     @FXML
     private AnchorPane salesmanMenuPane;
@@ -83,6 +97,24 @@ public class SalesmanMenu {
         exitBtn.setOnAction(event -> {
             AnchorPane loginPane = Utils.load("/com/boorsoft/loginWindow.fxml", SalesmanMenu.class);
             salesmanMenuPane.getChildren().setAll(loginPane);
+        });
+
+        maximizeButton.setOnAction(event -> {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            if (stage.isFullScreen())
+                stage.setFullScreen(false);
+            else
+                stage.setFullScreen(true);
+        });
+
+        minimizeButton.setOnAction(event -> {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setIconified(true);
+        });
+
+        quitButton.setOnAction(event -> {
+            Platform.exit();
         });
     }
 

@@ -30,6 +30,7 @@ public class Main extends Application {
             public void handle(MouseEvent event) {
                 xOffset = event.getSceneX();
                 yOffset = event.getSceneY();
+                primaryStage.setOpacity(0.9);
             }
         });
 
@@ -38,6 +39,13 @@ public class Main extends Application {
             public void handle(MouseEvent event) {
                 primaryStage.setX(event.getScreenX() - xOffset);
                 primaryStage.setY(event.getScreenY() - yOffset);
+            }
+        });
+
+        root.setOnMouseReleased(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                primaryStage.setOpacity(1);
             }
         });
 
