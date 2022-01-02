@@ -1,130 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.RadialGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="salesmanMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #8FC0A9; -fx-font-family: Roboto;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boorsoft.Components.Windows.SalesmanMenu">
+<AnchorPane fx:id="salesmanMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #8fc0a9; -fx-font-family: Roboto;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boorsoft.Components.Windows.SalesmanMenu">
    <children>
-      <VBox layoutX="7.0" layoutY="13.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="200.0">
+            <VBox alignment="TOP_CENTER" style="-fx-background-color: #696d7d;">
                <children>
-                  <JFXButton fx:id="maximizeButton" alignment="CENTER" layoutX="931.0" layoutY="10.0" text="□" textFill="#c8d5b9">
-                     <font>
-                        <Font name="Arial Bold" size="22.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton fx:id="minimizeButton" alignment="CENTER" layoutX="969.0" layoutY="10.0" text="-" textFill="#c8d5b9">
-                     <font>
-                        <Font name="Arial Bold" size="22.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton fx:id="quitButton" alignment="CENTER" text="x" textFill="#c8d5b9">
-                     <font>
-                        <Font name="Arial" size="22.0" />
-                     </font>
-                  </JFXButton>
-               </children>
-            </HBox>
-            <AnchorPane prefHeight="557.0" prefWidth="941.0" style="-fx-background-color: #696d7d; -fx-background-radius: 20px;">
-               <children>
-                  <AnchorPane layoutX="46.0" layoutY="90.0" prefHeight="377.0" prefWidth="295.0" style="-fx-background-color: #767b8d; -fx-background-radius: 7px;">
+                  <VBox prefHeight="200.0" prefWidth="320.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <JFXButton fx:id="showListBtn" layoutX="1.0" prefHeight="52.0" prefWidth="293.0" style="-fx-background-color: #8b90a1; -fx-border-radius: 7px;" text="ZEIGEN SIE DIE GESAMTE LISTE  &#10;DER PRODUKTE ZUM VERKAUF&#10;" textAlignment="CENTER" textFill="#636879">
+                        <HBox alignment="CENTER_LEFT" prefHeight="60.0">
+                           <children>
+                              <Label layoutX="10.0" layoutY="28.0" text="≡" textFill="#c8d5b9">
+                                 <font>
+                                    <Font name="Verdana" size="46.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </Label>
+                              <Label alignment="CENTER" text="VERKÄUFERMENÜ" textFill="#c8d5b9" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="20.0" style="-fx-background-color: #8fc0a9;">
+                     <children>
+                        <JFXButton fx:id="maximizeButton" alignment="CENTER" layoutX="931.0" layoutY="10.0" text="□" textFill="#c8d5b9">
                            <font>
-                              <Font name="Roboto Bold" size="12.0" />
+                              <Font name="Arial Bold" size="22.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="searchSubmitBtn" layoutX="1.0" layoutY="54.0" prefHeight="52.0" prefWidth="294.0" style="-fx-background-color: #8b90a1; -fx-border-radius: 7px;" text="PRODUKTSUCHE NACH" textFill="#636879">
+                        <JFXButton fx:id="minimizeButton" alignment="CENTER" layoutX="969.0" layoutY="10.0" text="-" textFill="#c8d5b9">
                            <font>
-                              <Font name="Roboto Bold" size="12.0" />
+                              <Font name="Arial Bold" size="22.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="salesReportBtn" layoutX="1.0" layoutY="108.0" prefHeight="52.0" prefWidth="294.0" style="-fx-background-color: #8b90a1; -fx-border-radius: 7px;" text="VERKAUFSBERICHT" textFill="#636879">
+                        <JFXButton fx:id="quitButton" alignment="CENTER" text="x" textFill="#c8d5b9">
                            <font>
-                              <Font name="Roboto Bold" size="12.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXButton fx:id="toSellBtn" layoutX="1.0" layoutY="162.0" prefHeight="52.0" prefWidth="294.0" style="-fx-background-color: #8b90a1; -fx-border-radius: 7px;" text="ARTIKEL VERKAUFT" textFill="#636879">
-                           <font>
-                              <Font name="Roboto Bold" size="12.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXButton fx:id="orderBtn" layoutX="1.0" layoutY="216.0" prefHeight="52.0" prefWidth="294.0" style="-fx-background-color: #8b90a1; -fx-border-radius: 7px;" text="EINE BESTELLUNG MACHEN" textFill="#636879">
-                           <font>
-                              <Font name="Roboto Bold" size="12.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXButton fx:id="removeBtn" layoutY="270.0" prefHeight="52.0" prefWidth="294.0" style="-fx-background-color: #8b90a1; -fx-border-radius: 7px;" text="АUFTRAG LÖSCHEN" textFill="#636879">
-                           <font>
-                              <Font name="Roboto Bold" size="12.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXButton fx:id="exitBtn" layoutX="1.0" layoutY="324.0" prefHeight="52.0" prefWidth="294.0" style="-fx-background-color: #8b90a1; -fx-border-radius: 7px;" text="AUSGANG" textFill="#636879">
-                           <font>
-                              <Font name="Roboto Bold" size="12.0" />
+                              <Font name="Arial" size="22.0" />
                            </font>
                         </JFXButton>
                      </children>
-                     <effect>
-                        <DropShadow height="62.03" radius="42.97" width="111.85">
-                           <color>
-                              <Color red="0.23903508484363556" green="0.2820540964603424" blue="0.4736842215061188" opacity="0.23000000417232513" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </AnchorPane>
-                  <Label layoutX="50.0" layoutY="32.0" text="S A L E S M A N  M E N U" textAlignment="JUSTIFY">
-                     <textFill>
-                        <RadialGradient centerX="0.5" centerY="0.5" proportional="false" radius="0.5">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </RadialGradient>
-                     </textFill>
-                     <font>
-                        <Font name="Roboto" size="12.0" />
-                     </font>
-                  </Label>
-                  <TableView fx:id="table" layoutX="356.0" layoutY="90.0" prefHeight="377.0" prefWidth="567.0" style="-fx-background-radius: 7px; -fx-background-color: #8b90a1;">
-                     <columns>
-                        <TableColumn fx:id="idColumn" prefWidth="46.0" text="Id" />
-                        <TableColumn fx:id="nameColumn" prefWidth="126.0" text="Name" />
-                        <TableColumn fx:id="amountColumn" prefWidth="121.0" text="Anzahl" />
-                        <TableColumn fx:id="priceColumn" prefWidth="88.0" text="Preis" />
-                        <TableColumn fx:id="orderDateColumn" prefWidth="97.0" text="Bestelldatum" />
-                        <TableColumn fx:id="dldeliveryDateColumn" prefWidth="88.0" text="Lieferdatum" />
-                     </columns>
-                  </TableView>
+                  </HBox>
                </children>
-               <effect>
-                  <DropShadow blurType="TWO_PASS_BOX" height="31.01" offsetX="4.0" offsetY="5.0" radius="21.91" spread="0.11" width="58.63">
-                     <color>
-                        <Color red="0.10745614022016525" green="0.1562134474515915" blue="0.15789473056793213" opacity="0.4000000059604645" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </AnchorPane>
+            </VBox>
          </children>
-      </VBox>
+      </HBox>
    </children>
 </AnchorPane>

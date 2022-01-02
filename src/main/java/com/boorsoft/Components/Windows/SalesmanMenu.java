@@ -85,20 +85,22 @@ public class SalesmanMenu {
     @FXML
     void initialize() {
 
-        showListBtn.setOnAction(event -> {
-            try {
-                showGoods();
-            } catch (SQLException | ClassNotFoundException throwables) {
-                throwables.printStackTrace();
-            }
-        });
+        // showListBtn.setOnAction(event -> {
+        // try {
+        // showGoods();
+        // } catch (SQLException | ClassNotFoundException throwables) {
+        // throwables.printStackTrace();
+        // }
+        // });
 
         // Выходит в главное меню
-        exitBtn.setOnAction(event -> {
-            AnchorPane loginPane = Utils.load("/com/boorsoft/loginWindow.fxml", SalesmanMenu.class);
-            salesmanMenuPane.getChildren().setAll(loginPane);
-        });
+        // exitBtn.setOnAction(event -> {
+        // AnchorPane loginPane = Utils.load("/com/boorsoft/loginWindow.fxml",
+        // SalesmanMenu.class);
+        // salesmanMenuPane.getChildren().setAll(loginPane);
+        // });
 
+        // Application control buttons
         maximizeButton.setOnAction(event -> {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -118,12 +120,12 @@ public class SalesmanMenu {
         });
     }
 
-    private void showGoods() throws SQLException, ClassNotFoundException {
-        DataBaseHandler dbHandler = new DataBaseHandler();
-        GoodsModel goods = new GoodsModel();
-        ResultSet resultSet = dbHandler.fromDBGoodsData(goods);
+    // private void showGoods() throws SQLException, ClassNotFoundException {
+    // DataBaseHandler dbHandler = new DataBaseHandler();
+    // GoodsModel goods = new GoodsModel();
+    // ResultSet resultSet = dbHandler.fromDBGoodsData(goods);
 
-        while (resultSet.next()) {
-        }
-    }
+    // while (resultSet.next()) {
+    // }
+    // }
 }
