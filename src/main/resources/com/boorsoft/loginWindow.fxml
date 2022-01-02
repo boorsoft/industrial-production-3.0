@@ -21,7 +21,6 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="loginPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #8FC0A9; -fx-font-family: Roboto;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boorsoft.Components.Windows.LoginWindow">
    <children>
       <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -177,7 +176,7 @@
                                           </PasswordField>
                                        </children>
                                     </HBox>
-                                    <Button fx:id="enterBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #8FC0A9; -fx-background-radius: 20px;" text="Hereinkommen" textFill="#696d7d">
+                                    <Button fx:id="enterBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #8FC0A9; -fx-background-radius: 20px;" text="Einloggen" textFill="#696d7d">
                                        <font>
                                           <Font name="Roboto" size="13.0" />
                                        </font>
