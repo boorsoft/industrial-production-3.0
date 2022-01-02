@@ -1,19 +1,37 @@
 package com.boorsoft.Components.Windows;
 
 import com.jfoenix.controls.JFXRadioButton;
+
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
 import com.boorsoft.Components.DataBaseHandler;
 import com.boorsoft.Helpers.Constants;
 import com.boorsoft.Helpers.Utils;
 import com.boorsoft.Models.WorkersModel;
 
 public class LoginWindow {
+
+    @FXML
+    private AnchorPane loginPane;
+
+    @FXML
+    private Button quitButton;
+
+    @FXML
+    private Button minimizeButton;
+
+    @FXML
+    private Button maximizeButton;
 
     @FXML
     private ResourceBundle resources;
@@ -71,8 +89,27 @@ public class LoginWindow {
         });
 
         registrBtn.setOnAction(event -> {
-            registrBtn.getScene().getWindow().hide();
-            Utils.load("/com/boorsoft/registrationWindow.fxml", LoginWindow.class);
+
+            AnchorPane registerPane = Utils.load("/com/boorsoft/registrationWindow.fxml", LoginWindow.class);
+            loginPane.getChildren().setAll(registerPane);
+        });
+
+        maximizeButton.setOnAction(event -> {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            if (stage.isFullScreen())
+                stage.setFullScreen(false);
+            else
+                stage.setFullScreen(true);
+        });
+
+        minimizeButton.setOnAction(event -> {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setIconified(true);
+        });
+
+        quitButton.setOnAction(event -> {
+            Platform.exit();
         });
     }
 
@@ -91,9 +128,8 @@ public class LoginWindow {
         }
         if (count >= 1) {
             if (workers.getAccType().equals("salesman")) {
-                enterBtn.getScene().getWindow().hide();
-                // если все правильно вызывает новое окно
-                Utils.load("/com/boorsoft/salesmanMenu.fxml", LoginWindow.class);
+                AnchorPane salesmanMenuPane = Utils.load("/com/boorsoft/salesmanMenu.fxml", LoginWindow.class);
+                loginPane.getChildren().setAll(salesmanMenuPane);
             } else if (workers.getAccType().equals("provider")) {
                 System.out.println("Provider menu");
             } else if (workers.getAccType().equals("deliver")) {

@@ -7,12 +7,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.scene.Node;
 
 import com.boorsoft.Components.DataBaseHandler;
 import com.boorsoft.Helpers.Constants;
@@ -20,6 +24,18 @@ import com.boorsoft.Helpers.Utils;
 import com.boorsoft.Models.WorkersModel;
 
 public class RegistrationWindow {
+
+    @FXML
+    private AnchorPane registerPane;
+
+    @FXML
+    private Button minimizeButton;
+
+    @FXML
+    private Button maximizeButton;
+
+    @FXML
+    private Button quitButton;
 
     @FXML
     private ResourceBundle resources;
@@ -109,8 +125,30 @@ public class RegistrationWindow {
         });
 
         backBtn.setOnAction(event -> {
-            backBtn.getScene().getWindow().hide();
-            Utils.load("/com/boorsoft/sample.fxml", RegistrationWindow.class);
+            AnchorPane loginPane = Utils.load("/com/boorsoft/loginWindow.fxml", RegistrationWindow.class);
+            registerPane.getChildren().setAll(loginPane);
+        });
+
+        maximizeButton.setOnAction(event -> {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            if (stage.isFullScreen())
+                stage.setFullScreen(false);
+            else
+                stage.setFullScreen(true);
+        });
+
+        minimizeButton.setOnAction(event -> {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setIconified(true);
+        });
+
+        quitButton.setOnAction(event -> {
+            Platform.exit();
+        });
+
+        quitButton.setOnAction(event -> {
+            Platform.exit();
         });
     }
 

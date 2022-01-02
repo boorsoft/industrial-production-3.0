@@ -18,7 +18,7 @@ public class Constants {
     public static String Type = null;
 
     public static final double WINDOW_WIDTH = 1000;
-    public static final double WINDOW_HEIGHT = 650;
+    public static final double WINDOW_HEIGHT = 700;
     public static final double MIN_WINDOW_WIDTH = 650;
     public static final double MIN_WINDOW_HEIGHT = 650;
 }
