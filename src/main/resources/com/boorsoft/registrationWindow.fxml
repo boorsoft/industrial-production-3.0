@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
@@ -22,205 +23,221 @@
 
 <AnchorPane fx:id="registerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #8FC0A9; -fx-font-family: Roboto;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boorsoft.Components.Windows.RegistrationWindow">
    <children>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="400.0" style="-fx-background-color: #696d7d; -fx-background-radius: 20px;" HBox.hgrow="ALWAYS">
-               <effect>
-                  <DropShadow blurType="TWO_PASS_BOX" height="87.93" offsetX="4.0" offsetY="5.0" radius="47.13" width="102.59">
-                     <color>
-                        <Color red="0.25200000405311584" green="0.4000000059604645" blue="0.32846665382385254" opacity="0.6363636255264282" />
-                     </color>
-                  </DropShadow>
-               </effect>
+            <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="200.0">
                <children>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <JFXButton fx:id="quitButton" alignment="CENTER" text="X" textFill="#c8d5b9">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="400.0" style="-fx-background-color: #696d7d; -fx-background-radius: 20px;" HBox.hgrow="ALWAYS">
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX" height="87.93" offsetX="4.0" offsetY="5.0" radius="47.13" width="102.59">
+                           <color>
+                              <Color red="0.25200000405311584" green="0.4000000059604645" blue="0.32846665382385254" opacity="0.6363636255264282" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                      <children>
-                        <HBox alignment="CENTER" prefHeight="174.0" prefWidth="400.0" VBox.vgrow="NEVER">
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="R E G I S T R I E R U N G" textAlignment="JUSTIFY">
-                                 <textFill>
-                                    <RadialGradient centerX="0.5" centerY="0.5" proportional="false" radius="0.5">
-                                       <stops>
-                                          <Stop>
-                                             <color>
-                                                <Color />
-                                             </color>
-                                          </Stop>
-                                          <Stop offset="1.0">
-                                             <color>
-                                                <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
-                                             </color>
-                                          </Stop>
-                                       </stops>
-                                    </RadialGradient>
-                                 </textFill>
-                                 <font>
-                                    <Font name="Roboto Bold" size="23.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets bottom="10.0" top="10.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </HBox>
-                        <VBox alignment="CENTER" prefHeight="455.0" prefWidth="400.0" spacing="20.0">
-                           <children>
-                              <HBox alignment="CENTER" prefHeight="42.0" prefWidth="300.0" spacing="20.0">
+                              <HBox alignment="CENTER" prefHeight="174.0" prefWidth="400.0" VBox.vgrow="NEVER">
                                  <children>
-                                    <JFXRadioButton fx:id="salesmanRegistrRadioBtn" text="Verkäufer" textFill="#c8d5b9">
-                                       <selectedColor>
-                                          <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
-                                       </selectedColor>
-                                       <unSelectedColor>
-                                          <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
-                                       </unSelectedColor>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text="R E G I S T R I E R U N G" textAlignment="JUSTIFY">
+                                       <textFill>
+                                          <RadialGradient centerX="0.5" centerY="0.5" proportional="false" radius="0.5">
+                                             <stops>
+                                                <Stop>
+                                                   <color>
+                                                      <Color />
+                                                   </color>
+                                                </Stop>
+                                                <Stop offset="1.0">
+                                                   <color>
+                                                      <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                                                   </color>
+                                                </Stop>
+                                             </stops>
+                                          </RadialGradient>
+                                       </textFill>
                                        <font>
-                                          <Font name="Roboto" size="14.0" />
+                                          <Font name="Roboto Bold" size="23.0" />
                                        </font>
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="toogleGroup1" />
-                                       </toggleGroup>
-                                    </JFXRadioButton>
-                                    <JFXRadioButton fx:id="providerRegistrRadioBtn" text="Lieferant" textFill="#c8d5b9" toggleGroup="$toogleGroup1">
-                                       <selectedColor>
-                                          <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
-                                       </selectedColor>
-                                       <unSelectedColor>
-                                          <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
-                                       </unSelectedColor>
-                                       <font>
-                                          <Font name="Roboto" size="14.0" />
-                                       </font>
-                                    </JFXRadioButton>
-                                    <JFXRadioButton fx:id="deliverRegistrRadioBtn" text="Kurier" textFill="#c8d5b9" toggleGroup="$toogleGroup1">
-                                       <selectedColor>
-                                          <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
-                                       </selectedColor>
-                                       <unSelectedColor>
-                                          <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
-                                       </unSelectedColor>
-                                       <font>
-                                          <Font name="Roboto" size="14.0" />
-                                       </font>
-                                    </JFXRadioButton>
+                                    </Label>
                                  </children>
                                  <padding>
-                                    <Insets bottom="5.0" top="5.0" />
+                                    <Insets bottom="10.0" top="10.0" />
                                  </padding>
                                  <VBox.margin>
                                     <Insets />
                                  </VBox.margin>
                               </HBox>
-                              <HBox spacing="10.0">
+                              <VBox alignment="CENTER" prefHeight="455.0" prefWidth="400.0" spacing="20.0">
                                  <children>
-                                    <ImageView pickOnBounds="true" smooth="false">
-                                       <image>
-                                          <Image url="@icons/user.png" />
-                                       </image>
-                                       <viewport>
-                                          <Rectangle2D />
-                                       </viewport>
-                                       <HBox.margin>
-                                          <Insets top="8.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <TextField fx:id="registrLoginField" prefHeight="29.0" prefWidth="236.0" promptText="Login eingeben..." style="-fx-background-color: #696d7d; -fx-border-width: 1; -fx-border-color: #C8D5B9; -fx-border-radius: 20px; -fx-text-fill: #C8D5B9; -fx-background-radius: 20px;" HBox.hgrow="ALWAYS">
+                                    <HBox alignment="CENTER" prefHeight="42.0" prefWidth="300.0" spacing="20.0">
+                                       <children>
+                                          <JFXRadioButton fx:id="salesmanRegistrRadioBtn" text="Verkäufer" textFill="#c8d5b9">
+                                             <selectedColor>
+                                                <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                                             </selectedColor>
+                                             <unSelectedColor>
+                                                <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                                             </unSelectedColor>
+                                             <font>
+                                                <Font name="Roboto" size="14.0" />
+                                             </font>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="toogleGroup1" />
+                                             </toggleGroup>
+                                          </JFXRadioButton>
+                                          <JFXRadioButton fx:id="providerRegistrRadioBtn" text="Lieferant" textFill="#c8d5b9" toggleGroup="$toogleGroup1">
+                                             <selectedColor>
+                                                <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                                             </selectedColor>
+                                             <unSelectedColor>
+                                                <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                                             </unSelectedColor>
+                                             <font>
+                                                <Font name="Roboto" size="14.0" />
+                                             </font>
+                                          </JFXRadioButton>
+                                          <JFXRadioButton fx:id="deliverRegistrRadioBtn" text="Kurier" textFill="#c8d5b9" toggleGroup="$toogleGroup1">
+                                             <selectedColor>
+                                                <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                                             </selectedColor>
+                                             <unSelectedColor>
+                                                <Color red="0.7843137383460999" green="0.8352941274642944" blue="0.7254902124404907" />
+                                             </unSelectedColor>
+                                             <font>
+                                                <Font name="Roboto" size="14.0" />
+                                             </font>
+                                          </JFXRadioButton>
+                                       </children>
                                        <padding>
-                                          <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                          <Insets bottom="5.0" top="5.0" />
                                        </padding>
-                                    </TextField>
-                                 </children>
-                              </HBox>
-                              <HBox spacing="10.0">
-                                 <children>
-                                    <ImageView pickOnBounds="true" smooth="false">
-                                       <image>
-                                          <Image url="@icons/lock.png" />
-                                       </image>
-                                       <viewport>
-                                          <Rectangle2D />
-                                       </viewport>
-                                       <HBox.margin>
-                                          <Insets top="8.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <PasswordField fx:id="registrPassField" prefHeight="29.0" prefWidth="236.0" promptText="Passwort eingeben..." style="-fx-background-color: #696d7d; -fx-border-width: 1; -fx-border-color: #C8D5B9; -fx-border-radius: 20px; -fx-text-fill: #C8D5B9;" HBox.hgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <ImageView pickOnBounds="true" smooth="false">
+                                             <image>
+                                                <Image url="@icons/user.png" />
+                                             </image>
+                                             <viewport>
+                                                <Rectangle2D />
+                                             </viewport>
+                                             <HBox.margin>
+                                                <Insets top="8.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <TextField fx:id="registrLoginField" prefHeight="29.0" prefWidth="236.0" promptText="Login eingeben..." style="-fx-background-color: #696d7d; -fx-border-width: 1; -fx-border-color: #C8D5B9; -fx-border-radius: 20px; -fx-text-fill: #C8D5B9; -fx-background-radius: 20px;" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </padding>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <ImageView pickOnBounds="true" smooth="false">
+                                             <image>
+                                                <Image url="@icons/lock.png" />
+                                             </image>
+                                             <viewport>
+                                                <Rectangle2D />
+                                             </viewport>
+                                             <HBox.margin>
+                                                <Insets top="8.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <PasswordField fx:id="registrPassField" prefHeight="29.0" prefWidth="236.0" promptText="Passwort eingeben..." style="-fx-background-color: #696d7d; -fx-border-width: 1; -fx-border-color: #C8D5B9; -fx-border-radius: 20px; -fx-text-fill: #C8D5B9;" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </padding>
+                                          </PasswordField>
+                                       </children>
+                                    </HBox>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <ImageView pickOnBounds="true" smooth="false">
+                                             <image>
+                                                <Image url="@icons/lock.png" />
+                                             </image>
+                                             <viewport>
+                                                <Rectangle2D />
+                                             </viewport>
+                                             <HBox.margin>
+                                                <Insets top="8.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <PasswordField fx:id="registrPassRepeatField" prefHeight="29.0" prefWidth="236.0" promptText="Passwort bestätigen..." style="-fx-background-color: #696d7d; -fx-border-width: 1; -fx-border-color: #C8D5B9; -fx-border-radius: 20px; -fx-text-fill: #C8D5B9;" HBox.hgrow="ALWAYS">
+                                             <padding>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </padding>
+                                          </PasswordField>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="confirmBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #8FC0A9; -fx-background-radius: 20px;" text="Bestätigen" textFill="#696d7d">
+                                       <font>
+                                          <Font name="Roboto" size="13.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
                                        <padding>
-                                          <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                          <Insets bottom="10.0" top="10.0" />
                                        </padding>
-                                    </PasswordField>
-                                 </children>
-                              </HBox>
-                              <HBox spacing="10.0">
-                                 <children>
-                                    <ImageView pickOnBounds="true" smooth="false">
-                                       <image>
-                                          <Image url="@icons/lock.png" />
-                                       </image>
-                                       <viewport>
-                                          <Rectangle2D />
-                                       </viewport>
-                                       <HBox.margin>
-                                          <Insets top="8.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <PasswordField fx:id="registrPassRepeatField" prefHeight="29.0" prefWidth="236.0" promptText="Passwort bestätigen..." style="-fx-background-color: #696d7d; -fx-border-width: 1; -fx-border-color: #C8D5B9; -fx-border-radius: 20px; -fx-text-fill: #C8D5B9;" HBox.hgrow="ALWAYS">
+                                    </Button>
+                                    <Button fx:id="backBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #8FC0A9; -fx-background-radius: 20px;" text="Ausgang" textFill="#696d7d">
+                                       <font>
+                                          <Font name="Roboto" size="13.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
                                        <padding>
-                                          <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                          <Insets bottom="10.0" top="10.0" />
                                        </padding>
-                                    </PasswordField>
+                                    </Button>
                                  </children>
-                              </HBox>
-                              <Button fx:id="confirmBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #8FC0A9; -fx-background-radius: 20px;" text="Bestätigen" textFill="#696d7d">
-                                 <font>
-                                    <Font name="Roboto" size="13.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
                                  <padding>
-                                    <Insets bottom="10.0" top="10.0" />
+                                    <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
                                  </padding>
-                              </Button>
-                              <Button fx:id="backBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #8FC0A9; -fx-background-radius: 20px;" text="Ausgang" textFill="#696d7d">
-                                 <font>
-                                    <Font name="Roboto" size="13.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <padding>
-                                    <Insets bottom="10.0" top="10.0" />
-                                 </padding>
-                              </Button>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </VBox>
                            </children>
                            <padding>
-                              <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+                              <Insets bottom="50.0" top="50.0" />
                            </padding>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
                         </VBox>
                      </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                      <padding>
-                        <Insets bottom="50.0" top="50.0" />
+                        <Insets bottom="20.0" top="20.0" />
                      </padding>
-                  </VBox>
+                  </AnchorPane>
                </children>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
                <padding>
-                  <Insets bottom="20.0" top="20.0" />
+                  <Insets bottom="50.0" top="50.0" />
                </padding>
-            </AnchorPane>
+            </HBox>
          </children>
-         <padding>
-            <Insets bottom="50.0" top="50.0" />
-         </padding>
-      </HBox>
+      </VBox>
    </children>
 </AnchorPane>

@@ -9,11 +9,16 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
+
 import com.boorsoft.Components.DataBaseHandler;
 import com.boorsoft.Helpers.Utils;
 import com.boorsoft.Models.GoodsModel;
 
 public class SalesmanMenu {
+
+    @FXML
+    private AnchorPane salesmanMenuPane;
 
     @FXML
     private ResourceBundle resources;
@@ -76,8 +81,8 @@ public class SalesmanMenu {
 
         // Выходит в главное меню
         exitBtn.setOnAction(event -> {
-            exitBtn.getScene().getWindow().hide();
-            Utils.load("/com/boorsoft/loginWindow.fxml", SalesmanMenu.class);
+            AnchorPane loginPane = Utils.load("/com/boorsoft/loginWindow.fxml", SalesmanMenu.class);
+            salesmanMenuPane.getChildren().setAll(loginPane);
         });
     }
 

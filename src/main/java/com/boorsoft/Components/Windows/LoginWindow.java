@@ -107,9 +107,8 @@ public class LoginWindow {
         }
         if (count >= 1) {
             if (workers.getAccType().equals("salesman")) {
-                enterBtn.getScene().getWindow().hide();
-                // если все правильно вызывает новое окно
-                Utils.load("/com/boorsoft/salesmanMenu.fxml", LoginWindow.class);
+                AnchorPane salesmanMenuPane = Utils.load("/com/boorsoft/salesmanMenu.fxml", LoginWindow.class);
+                loginPane.getChildren().setAll(salesmanMenuPane);
             } else if (workers.getAccType().equals("provider")) {
                 System.out.println("Provider menu");
             } else if (workers.getAccType().equals("deliver")) {
