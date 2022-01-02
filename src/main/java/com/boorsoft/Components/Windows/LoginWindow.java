@@ -90,9 +90,8 @@ public class LoginWindow {
 
         registrBtn.setOnAction(event -> {
 
-            AnchorPane registrationPane = Utils.load("/com/boorsoft/registrationWindow.fxml", LoginWindow.class);
-            loginPane.getChildren().setAll(registrationPane);
-
+            AnchorPane registerPane = Utils.load("/com/boorsoft/registrationWindow.fxml", LoginWindow.class);
+            loginPane.getChildren().setAll(registerPane);
         });
 
         maximizeButton.setOnAction(event -> {
